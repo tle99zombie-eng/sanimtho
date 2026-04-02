@@ -1,6 +1,7 @@
 from flask import Flask, render_template_string, request, redirect, url_for
 import firebase_admin
 from firebase_admin import credentials, firestore
+import os
 
 app = Flask(__name__)
 
@@ -85,5 +86,5 @@ def del_t(t_id):
     return redirect('/')
 
 if __name__ == '__main__':
-    app.run()
-
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
