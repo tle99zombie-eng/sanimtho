@@ -1,3 +1,4 @@
-flask,
-firebase-admin,
+flask
+firebase-admin
+pytz
 gunicorn
